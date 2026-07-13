@@ -1,0 +1,20 @@
+# ApprovalCode 安全规则配置
+# 参考 Claude Code 的 permission settings
+
+rules:
+  - name: "prompt_injection_defense"
+    pattern: "(?i)(忽略|无视|绕过|删除|忘记).*(指令|规则|限制|安全)"
+    action: DENY
+    message: "检测到潜在 Prompt 注入攻击"
+
+  - name: "high_amount_approval"
+    condition: "contract_amount > 500000"
+    action: ASK
+    message: "合同金额超过50万，需要人工审批"
+    timeout: 300
+
+  - name: "sensitive_clause_type"
+    pattern: "竞业限制|排他条款|无限连带责任"
+    action: ASK
+    message: "合同包含敏感条款，需要人工复审"
+    timeout: 600
