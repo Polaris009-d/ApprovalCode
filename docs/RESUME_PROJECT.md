@@ -2,7 +2,7 @@
 
 ## 项目信息
 
-- 项目时间: 2025.11 - 2026.07
+- 项目时间: 2025.11 - 2026.03
 - 角色: 独立开发
 - 技术栈: FastAPI, Redis, PostgreSQL, Vue2, SSE, DeepSeek V4 Pro, Baidu OCR, PyMuPDF, Pydantic
 
